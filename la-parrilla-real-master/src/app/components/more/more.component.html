@@ -1,0 +1,31 @@
+<div class="about-section d-flex align-items-center py-5">
+    <div class="text-about col-md-6">
+      <h2>Reservas</h2>
+      <p>Si deseas hacer una reserva, por favor haz clic en el siguiente enlace y completa el formulario.</p>
+      <a href="javascript:void(0);" class="btn-order" (click)="openModal()">Haz tu reserva</a>
+    </div>
+  </div>
+  
+  <div id="reservaModal" class="modal" [style.display]="modalDisplay">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>Formulario de Reserva</h2>
+      <form id="reservaForm" (ngSubmit)="submitForm($event)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+        <label for="fecha">Fecha de reserva:</label>
+        <input type="date" id="fecha" name="fecha" required>
+        <br>
+        <label for="personas">Número de personas:</label>
+        <input type="number" id="personas" name="personas" required>
+        <br><br>
+        <button type="submit" class="btn-order">Confirmar Reserva</button>
+      </form>
+    </div>
+  </div>
+  
+  <div class="notification" id="notification">
+    ¡Reserva confirmada con éxito!
+  </div>
+  
